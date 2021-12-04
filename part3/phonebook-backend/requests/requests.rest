@@ -1,0 +1,34 @@
+GET http://localhost:3001/api/persons
+
+###
+
+GET http://localhost:3001/api/persons/6139c5cbd559283af32e7327
+
+###
+
+GET http://localhost:3001/notexist
+
+###
+
+PUT http://localhost:3001/api/persons/613a0b46326b64adf455a8c9
+Content-Type: application/json
+
+{
+  "number": "2"
+}
+
+###
+
+DELETE http://localhost:3001/api/persons/6139c5cbd559283af32e7327
+
+###
+
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "K",
+  "number": "554"
+}
+
+###
