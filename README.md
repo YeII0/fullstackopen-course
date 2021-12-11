@@ -1,4 +1,5 @@
-Kod napisany podczas przerabiania kursu Full stack Wydziału Informatyki Uniwersytetu w Helsinkach.
+Kod pisany podczas przerabiania kursu Full stack Wydziału Informatyki Uniwersytetu w Helsinkach.
+Nadal jestem w trakcie przerabiania kursu.
 
 Zawartość kursu:
 "This course serves as an introduction to modern web application development with JavaScript. The main focus is on building single page applications with ReactJS that use REST APIs built with Node.js. The course also contains a section on GraphQL, a modern alternative to REST APIs.
