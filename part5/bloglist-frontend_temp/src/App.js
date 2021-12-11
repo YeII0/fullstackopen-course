@@ -41,7 +41,7 @@ const App = () => {
   }, [])
 
   dispatch(setNotification({
-    message: 'dupa',
+    message: 'foo',
     messageType: 'success'
   }))
 

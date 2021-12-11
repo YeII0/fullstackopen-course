@@ -14,7 +14,7 @@ beforeEach(async () => {
   await Blog.insertMany(mockData.blogs)
 
   await User.deleteMany({})
-  const passwordHash = await bcrypt.hash('dupa', 10)
+  const passwordHash = await bcrypt.hash('foo', 10)
   const user = new User({ username: 'root', passwordHash })
   await user.save()
 
@@ -72,7 +72,7 @@ describe('addition of a new blog', () => {
     const users = await helper.usersInDb()
     const userToLogin = users[0]
 
-    const token = await helper.getToken(userToLogin.username, 'dupa')
+    const token = await helper.getToken(userToLogin.username, 'foo')
 
     const newBlog = {
       title: 'Being vegan',
@@ -108,7 +108,7 @@ describe('addition of a new blog', () => {
       url: 'https://beingvegan.com',
     }
 
-    const token = await helper.getToken(userToLogin.username, 'dupa')
+    const token = await helper.getToken(userToLogin.username, 'foo')
 
     const response = await api
       .post('/api/blogs')
@@ -122,7 +122,7 @@ describe('addition of a new blog', () => {
     const users = await helper.usersInDb()
     const userToLogin = users[0]
 
-    const token = await helper.getToken(userToLogin.username, 'dupa')
+    const token = await helper.getToken(userToLogin.username, 'foo')
 
     const test = async (blog) => {
       await api

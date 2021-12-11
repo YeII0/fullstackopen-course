@@ -4,7 +4,7 @@ describe('Blog app', function () {
     cy.createUser({
       fullname: 'Maciej Rozyc',
       username: 'macieksej',
-      password: 'dupa'
+      password: 'foo'
     })
     cy.loadPage()
   })
@@ -16,7 +16,7 @@ describe('Blog app', function () {
   describe('Login', function () {
     it('succeds with correct credientials', function () {
       cy.get('#username').type('macieksej')
-      cy.get('#password').type('dupa')
+      cy.get('#password').type('foo')
       cy.get('#login-button').click()
 
       cy.contains('Maciej Rozyc logged-in')
@@ -35,7 +35,7 @@ describe('Blog app', function () {
 
   describe('when logged in', function () {
     beforeEach(function () {
-      cy.login({ username: 'macieksej', password: 'dupa' })
+      cy.login({ username: 'macieksej', password: 'foo' })
     })
 
     it('a blog can be created', function () {
@@ -77,11 +77,11 @@ describe('Blog app', function () {
         cy.createUser({
           fullname: 'Another User',
           username: 'anotheruser',
-          password: 'dupa',
+          password: 'foo',
         })
         cy.login({
           username: 'anotheruser',
-          password: 'dupa'
+          password: 'foo'
         })
         cy.createBlog({
           author: 'Michael Greger',
@@ -91,7 +91,7 @@ describe('Blog app', function () {
         })
         cy.login({
           username: 'macieksej',
-          password: 'dupa'
+          password: 'foo'
         })
         cy.contains('Title: Tea').closest('[data-name=blog]').as('otherUserBlog')
         cy.get('@otherUserBlog').contains('show more').click()

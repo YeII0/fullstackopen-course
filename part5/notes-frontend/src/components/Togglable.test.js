@@ -16,7 +16,7 @@ describe('<Togglable />', () => {
   })
 
   test('renders its children', () => {
-    const testDiv = component.container.querySelector('.dupa')
+    const testDiv = component.container.querySelector('.foo')
 
     console.log(prettyDOM(testDiv))
 
